@@ -46,3 +46,59 @@ _.mixin(
     _.bind(_.mixin, _)
   ))
 )
+
+// _.arrToStr
+_.mixlo(
+  _.str(_.a,_.r,_.r,_.T,_.o,_.S,_.t,_.r),
+  _.partialRight(_.join, _.stubString())
+)
+
+// _.concatString
+_.mixlo(
+  _.str(_.c,_.o,_.n,_.c,_.a,_.t,_.S,_.t,_.r,_.i,_.n,_.g),
+  _.flow(
+    _.concat,
+    _.arrToStr
+  )
+)
+
+// _._0 to _._9
+// Adds methods for each of numbers 0-9 to _.
+// The name of each method is a an "_" followed by a single digit
+// and each method returns that digit as a number.
+// For example, _._0() => 0, _._7() => 7
+_.each(
+  _.range(_.toNumber(
+    _.join(_.concat(
+      _.toNumber(_.stubTrue()),
+      _.toNumber(_.stubFalse())
+    ), _.stubString())
+  )),
+  _.flow(
+    _.unary(
+      _.over(
+        _.partial(_.concatString, _.head(_.keys(_.templateSettings.imports))),
+        _.constant
+      )
+    ),
+    _.spread(_.mixlo),
+  )
+)
+
+// _.str
+// Adds a `_.str` method. The method recieves one or more
+// _ functions, concatenates the results of calling these without parameters, and
+// then converts the concatenation to a number. When used in conjuction with the
+// methods created in the previous code block, this allows for a convenient way
+// to create strings. For example: `_.str(_.f,_.o,_.o) => 'foo'``
+_.mixlo(
+  _.str(_.n,_.u,_.m),
+  _.flow(
+    _.over,
+    _.attempt,
+    _.arrToStr,
+    _.toNumber
+  )
+)
+
+console.log(_.num(_._7,_._5,_._0))
