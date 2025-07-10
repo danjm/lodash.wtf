@@ -1,7 +1,8 @@
 const _ = require('lodash');
 
 
-// The below block of code adds methods for each of the letters [A-z] to _
+// _.A to _.z
+// Adds methods for each of the letters [A-z] to _
 // The name of each method is a single upper or lower case letter, and each
 // method returns a single character string, the letter of its method name.
 // For example, _.a() => 'a', _.R() => 'R'
@@ -22,7 +23,8 @@ _.each(
   )
 );
 
-// The below block of code adds a `_.str` method. The method recieves one or more
+// _.str
+// Adds a `_.str` method. The method recieves one or more
 // _ functions, and returns a concatenation of calling them without parameters. When
 // used in conjuction with the methods created in the previous code block, this allows
 // for a convenient way to create strings. For example: `_.str(_.f,_.o,_.o) => 'foo'``
@@ -35,3 +37,12 @@ _.mixin(
   ))
 )
 
+// _.mixlo
+// A convenience method for adding mixins. It receives a string and a function
+// and mixes in the new method to _
+_.mixin(
+  _.set(_.stubObject, _.str(_.m,_.i,_.x,_.l,_.o), _.flow(
+    _.partial(_.set, _.stubObject()),
+    _.bind(_.mixin, _)
+  ))
+)
