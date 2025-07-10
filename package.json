@@ -1,0 +1,14 @@
+{
+  "name": "youonlyneedlodash",
+  "version": "0.1.0",
+  "description": "A demonstration of how lodash makes the rest of javascript redundant",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "lodash"
+  ],
+  "author": "Dan Miller",
+  "license": "GPL-3.0-or-later"
+}
