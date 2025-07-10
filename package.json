@@ -10,5 +10,8 @@
     "lodash"
   ],
   "author": "Dan Miller",
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
