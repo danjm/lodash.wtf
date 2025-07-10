@@ -110,3 +110,24 @@ _.mixlo(
     _.partial(_.get, _.flow(_.mixin)(_))
   )
 )
+
+// _.consoleLog
+_.mixlo(
+  _.str(_.c,_.o,_.n,_.s,_.o,_.l,_.e,_.L,_.o,_.g),
+  _.partial(
+    _.invoke,
+    _.window(_.c,_.o,_.n,_.s,_.o,_.l,_.e),
+    _.str(_.l,_.o,_.g)
+  )
+)
+
+// _.logStr
+_.mixlo(
+  _.str(_.l,_.o,_.g,_.S,_.t,_.r),
+  _.flow(
+    _.str,
+    _.consoleLog
+  )
+)
+
+_.logStr(_.t,_.e,_.s,_.t)
