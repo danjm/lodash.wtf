@@ -101,4 +101,12 @@ _.mixlo(
   )
 )
 
-console.log(_.num(_._7,_._5,_._0))
+// _.window
+// e.g. _.window(_.c,_.o,_.n,_.s,_.o,_.l,_.e) => window.console
+_.mixlo(
+  _.str(_.w,_.i,_.n,_.d,_.o,_.w),
+  _.flow(
+    _.str,
+    _.partial(_.get, _.flow(_.mixin)(_))
+  )
+)
