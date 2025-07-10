@@ -22,5 +22,16 @@ _.each(
   )
 );
 
-console.log(_.a())
-console.log(_.R())
+// The below block of code adds a `_.str` method. The method recieves one or more
+// _ functions, and returns a concatenation of calling them without parameters. When
+// used in conjuction with the methods created in the previous code block, this allows
+// for a convenient way to create strings. For example: `_.str(_.f,_.o,_.o) => 'foo'``
+
+_.mixin(
+  _.set(_.stubObject, _.join(_.over(_.s,_.t,_.r)(), _.stubString()), _.flow(
+    _.over,
+    _.attempt,
+    _.partialRight(_.join, _.stubString())
+  ))
+)
+
